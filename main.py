@@ -212,12 +212,13 @@ class RealTimePredictor:
 
         cap.release()
 
-# 사용 예시
-model = create_model()
-model.load_weights('lstm_transformer_with_model.h5')
-model.summary()
-predictor = RealTimePredictor(model)
+if __name__ == "__main__":
+    # 사용 예시
+    model = create_model()
+    model.load_weights('lstm_transformer_with_model.h5')
+    model.summary()
+    predictor = RealTimePredictor(model)
 
-# 비디오 파일 사용 예시
-predictor.run('final_video.mp4')
-# predictor.run(0)  # 웹캠을 사용하는 경우, 비디오 파일 경로를 넣을 수도 있습니다.
+    # 비디오 파일 사용 예시
+    predictor.run('final_video.mp4')
+    # predictor.run(0)  # 웹캠을 사용하는 경우, 비디오 파일 경로를 넣을 수도 있습니다.
